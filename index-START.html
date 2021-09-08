@@ -13,8 +13,11 @@
     <label for="spacing">Spacing:</label>
     <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 
-    <label for="blur">Blur:</label>
-    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+    <label for="round">Roundness:</label>
+    <input id="round" type="range" name="round" min="0" max="100" value="10" data-sizing="%">
+
+    <label for="sepia">Sepia:</label>
+    <input id="sepia" type="range" name="sepia" min="0" max="100" value="0" data-sizing="%">
 
     <label for="base">Base Color</label>
     <input id="base" type="color" name="base" value="#ffc600">
@@ -26,13 +29,15 @@
     :root {
       --base: #ffc600;
       --spacing: 10px;
-      --blur: 10px;
+      --sepia: 0%;
+      --round: 5%;
     }
 
     img {
       padding: var(--spacing);
       background: var(--base);
-      filter: blur(var(--blur));
+      filter: sepia(var(--sepia));
+      border-radius: var(--round);
     }
 
     .h1 {
